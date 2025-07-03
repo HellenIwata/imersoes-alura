@@ -1,0 +1,12 @@
+services:
+  api:
+    build: .
+    container_name: gestao_escolar_api
+    ports:
+      # Mapeia a porta do host para a porta do contêiner usando uma variável.
+      - "8000:8000"
+    volumes:
+      # Monta o código-fonte para permitir o hot-reload.
+      # O banco de dados (escola.db) será salvo no seu diretório local.
+      - .:/app
+    command: uvicorn app:app --host 0.0.0.0 --port 8000 --reload --log-level info

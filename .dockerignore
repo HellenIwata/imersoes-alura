@@ -1,0 +1,7 @@
+# Ignorar diretório do Git
+.git
+
+# Ignorar arquivos e diretórios específicos do Python
+__pycache__/
+*.pyc
+.venv/
